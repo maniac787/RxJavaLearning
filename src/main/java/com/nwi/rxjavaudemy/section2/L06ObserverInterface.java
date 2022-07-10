@@ -1,4 +1,4 @@
-package com.nwi.rxjavaudemy;
+package com.nwi.rxjavaudemy.section2;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
