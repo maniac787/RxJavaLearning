@@ -12,8 +12,6 @@ public class L10RangIntervalFactories {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         Observable.range(0, 15).subscribe(System.out::println);
-
     }
 }
