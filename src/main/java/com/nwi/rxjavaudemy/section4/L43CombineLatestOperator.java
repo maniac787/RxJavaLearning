@@ -1,5 +1,6 @@
 package com.nwi.rxjavaudemy.section4;
 
+import com.nwi.rxjavaudemy.SleepUtil;
 import io.reactivex.Observable;
 
 import java.util.concurrent.TimeUnit;
@@ -16,15 +17,7 @@ public class L43CombineLatestOperator {
                 .subscribe(System.out::println);
 
         source1.withLatestFrom(source2, (e1, e2)-> "source1: "+ e1 + "-" +" source2: " + e2);
-        sleep(5000);
+        SleepUtil.sleep(5000);
 
-    }
-
-    public static void sleep(long time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

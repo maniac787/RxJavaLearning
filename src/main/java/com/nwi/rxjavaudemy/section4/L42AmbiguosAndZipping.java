@@ -1,5 +1,6 @@
 package com.nwi.rxjavaudemy.section4;
 
+import com.nwi.rxjavaudemy.SleepUtil;
 import io.reactivex.Observable;
 
 import java.util.concurrent.TimeUnit;
@@ -10,20 +11,12 @@ public class L42AmbiguosAndZipping {
         Observable<Long> source2 = Observable.interval(300, TimeUnit.MILLISECONDS);
         Observable.ambArray(source1, source2)
                 .subscribe(System.out::println);
-        sleep(5000);
+        SleepUtil.sleep(5000);
 
 
         Observable<String> source3 = Observable.just("Alpha", "Beta", "Gamma", "Delta");
         Observable<String> source4 = Observable.just("Epsilon", "Zeta");
         Observable.zip(source3, source4, (e1, e2) -> e1 + "-" + e2)
                 .subscribe(System.out::println);
-    }
-
-    public static void sleep(long time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
